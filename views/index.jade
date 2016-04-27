@@ -1,9 +1,9 @@
-html
-  body
-    h1=title
-    ul.projects
-      each project in projects
-        li.project
-          a(href='/project/' + project.id)
-            h1.title=project.name
-          p.description=project.description
+extend layout
+block content
+  h1=title
+  ul.projects
+    each project in projects
+      li.project
+        a(href='/project/' + project.id)
+          h1.title=project.name
+        p.description=project.description

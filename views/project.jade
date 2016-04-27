@@ -1,5 +1,5 @@
-html
-  body
-    h1=project.name
-    p=project.description
-    block content
+extend layout
+block content
+  h1=project.name
+  p=project.description
+  block content

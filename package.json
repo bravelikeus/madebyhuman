@@ -4,7 +4,9 @@
   "description": "made by human site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss sass/style.scss public/css/style.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +15,8 @@
     "express": "^4.13.4",
     "jade": "^1.11.0",
     "logger": "0.0.1"
+  },
+  "devDependencies": {
+    "node-sass": "^3.6.0"
   }
 }
