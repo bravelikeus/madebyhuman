@@ -13,7 +13,7 @@ const app = express();
 var middleware = require('./middleware.js');
 var portfolio = require('./projects.js');
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public'));
 // Templating engine
 const viewPath = __dirname + '/views/';
 app.set('views', viewPath)
