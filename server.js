@@ -1,15 +1,26 @@
 var express = require('express');
 var jade = require('jade');
+// var blogger = require('logger');
+var bodyParser = require('body-parser');
+
+
 const app = express();
 
-const PORT = process.env.PORT || 5000;
-const viewPath = __dirname + '/views/'
+// -- Task -- config middleware
+var middleware = require('./middleware.js');
+var portfolio = require('./projects.js');
+
 
 // Templating engine
+const viewPath = __dirname + '/views/';
 app.set('views', viewPath)
 app.set('view engine', 'jade');
 
-var portfolio = require('./projects.js');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(middleware.logger);
+
+const PORT = process.env.PORT || 5000;
 
 
 // Routes
@@ -23,7 +34,8 @@ app.get('/projects', (req, res) => {
 
 app.get('/project/:id', (req, res) => {
   var project = portfolio.getProject(req.params.id);
-  res.render('project', {project: project});
+  res.render("projects/" + project.name, {project: project});
+  console.log(project.name);
 });
 
 app.get('/about', (req, res) => {
@@ -31,7 +43,7 @@ app.get('/about', (req, res) => {
 });
 
 // Server port
-app.listen(PORT, function(){
+app.listen(PORT, () =>{
  console.log("Connected at port: " + PORT)
 });
 
