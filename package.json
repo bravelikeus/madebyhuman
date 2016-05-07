@@ -8,6 +8,9 @@
     "build-css": "node-sass --include-path scss sass/style.scss public/css/style.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
+  "engines": {
+    "node": "6.0.0"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
