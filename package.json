@@ -14,10 +14,10 @@
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "jade": "^1.11.0",
+    "jquery": "^2.2.3",
     "logger": "0.0.1",
-    "node-sass": "^3.6.0"
+    "node-sass": "^3.6.0",
+    "smoothstate": "^0.7.2"
   },
-  "devDependencies": {
-    
-  }
+  "devDependencies": {}
 }

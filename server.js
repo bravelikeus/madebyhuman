@@ -3,6 +3,8 @@ var jade = require('jade');
 // var blogger = require('logger');
 var bodyParser = require('body-parser');
 
+
+
 // serves static files in public folder
 
 
@@ -10,10 +12,11 @@ var bodyParser = require('body-parser');
 const app = express();
 
 // -- Task -- config middleware
+app.use(express.static(__dirname + '/public'));
 var middleware = require('./middleware.js');
 var portfolio = require('./projects.js');
 
-app.use(express.static(__dirname + '/public'));
+
 // Templating engine
 const viewPath = __dirname + '/views/';
 app.set('views', viewPath)
